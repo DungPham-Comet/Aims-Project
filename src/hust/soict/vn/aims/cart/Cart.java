@@ -1,5 +1,5 @@
 package hust.soict.vn.aims.cart;
-import hust.soict.vn.aims.disc.DigitalVideoDisc;
+import hust.soict.vn.aims.media.DigitalVideoDisc;
 
 public class Cart {
 	
