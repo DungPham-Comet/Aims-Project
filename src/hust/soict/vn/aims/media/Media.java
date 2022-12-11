@@ -42,6 +42,4 @@ public abstract class Media {
 		this.cost = cost;
 	}
 	
-	
-
 }
