@@ -31,6 +31,8 @@ public class Disc extends Media {
 		this.director = director;
 	}
 	
-	
+	public String toString() {
+		return id + " " + title + " " + category + " " + length + " " + director + " " + cost + ".\n";
+	}
 
 }

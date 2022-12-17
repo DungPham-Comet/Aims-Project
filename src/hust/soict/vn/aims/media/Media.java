@@ -42,4 +42,15 @@ public abstract class Media {
 		this.cost = cost;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Media))
+			return false;
+		Media m1 = (Media) obj;
+		if (m1.getTitle() == this.getTitle())
+			return true;
+		else return false;
+	}
+	
+	public abstract String toString();
 }

@@ -39,5 +39,8 @@ public class Books extends Media{
 		}
 	}
 	
+	public String toString() {
+		return id + " " + title + " " + category + " " + authors + " " + cost + ".\n";
+	}
 
 }
