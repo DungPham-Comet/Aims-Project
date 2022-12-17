@@ -6,8 +6,8 @@ import java.util.List;
 public class Books extends Media{
 	private List<String> authors = new ArrayList<String>();
 	
-	public Books() {
-		
+	public Books(int a, String b, String c, float d) {
+		super(a,b,c,d);
 	}
 
 	public void addAuthor(String authorName) {
