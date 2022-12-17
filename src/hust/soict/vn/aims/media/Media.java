@@ -42,6 +42,4 @@ public abstract class Media {
 		this.cost = cost;
 	}
 	
-	public abstract void addMedia();
-	public abstract void removeMedia();
 }
