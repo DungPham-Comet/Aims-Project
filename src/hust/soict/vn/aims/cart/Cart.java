@@ -9,6 +9,10 @@ public class Cart {
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 	public static final int MAX_NUMBER_ORDERED = 20;
 	
+	public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+	
 	public void addMedia(Media md1) {
 		if (itemsOrdered.size() + 1 < MAX_NUMBER_ORDERED) {
 			itemsOrdered.add(md1);
@@ -33,4 +37,11 @@ public class Cart {
 		}
 		return sum;
 	}
+	
+	public void printCart() {
+		for (Media m1 : itemsOrdered) {
+			m1.toString();
+		}
+	}
+
 }

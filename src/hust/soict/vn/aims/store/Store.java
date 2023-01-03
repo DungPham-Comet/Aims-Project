@@ -7,6 +7,10 @@ import hust.soict.vn.aims.media.Media;
 public class Store {
 	private ArrayList<Media> itemsInStore = new ArrayList<>();
 	
+	public ArrayList<Media> getItemsInStore() {
+		return itemsInStore;
+	}
+	
 	public void addMedia(Media md1) {
 		if (itemsInStore.add(md1))
 			System.out.println("The " + md1.getTitle() +" has been added to store.");
@@ -21,4 +25,9 @@ public class Store {
 			System.out.println("There's no items like " + md1.getTitle() +" in store.");
 	}
 	
+	public void displayStore() {
+		for (Media m1 : itemsInStore) {
+			System.out.println(m1.toString());
+		}
+	}
 }

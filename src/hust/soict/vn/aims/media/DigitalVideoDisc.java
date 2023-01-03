@@ -1,7 +1,9 @@
 package hust.soict.vn.aims.media;
 
 public class DigitalVideoDisc extends Disc implements Playable {
+	
 	private static int nbDigitalVideoDisc = 0;
+	
 	public DigitalVideoDisc(String title) {
 		super();
 		nbDigitalVideoDisc += 1;

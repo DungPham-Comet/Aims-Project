@@ -3,6 +3,7 @@ package hust.soict.vn.aims.media;
 import java.util.Comparator;
 
 public abstract class Media {
+	
 	protected int id;
 	protected String title;
 	protected String category;
@@ -13,7 +14,7 @@ public abstract class Media {
 	}
 
 	public Media(int id, String title, String category, float cost) {
-		super();
+
 		this.id = id;
 		this.title = title;
 		this.category = category;
