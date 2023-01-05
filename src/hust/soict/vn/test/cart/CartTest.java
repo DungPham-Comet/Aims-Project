@@ -1,6 +1,7 @@
 package hust.soict.vn.test.cart;
 import hust.soict.vn.aims.cart.Cart;
 import hust.soict.vn.aims.media.DigitalVideoDisc;
+import hust.soict.vn.aims.media.Media;
 
 public class CartTest {
 
@@ -18,7 +19,11 @@ public class CartTest {
 		
 		System.out.println(cart.totalCost());
 		
-		//cart.printCart();
+		cart.printCart();
+		//System.out.println(cart.getItemsOrdered().get(0).toString());
+		/*(for (int i = 0; i < cart.getItemsOrdered().size(); i++) {
+			System.out.print(cart.getItemsOrdered().get(i).toString());
+		}*/
 	}
 
 }

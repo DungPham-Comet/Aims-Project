@@ -71,7 +71,7 @@ public class Aims {
 				System.out.print("\nPlease enter the title of the media you want to get details: ");
 				String title = kb3.nextLine();
 				for (Media m1 : store1.getItemsInStore()) {
-					if (m1.getTitle().equals(title)) {
+					if ((m1.getTitle()).equals(title)) {
 						mediaDetailsMenu(m1);
 					}
 				}
@@ -92,7 +92,7 @@ public class Aims {
 	}
 	
 	public static void mediaDetailsMenu(Media m1) {
-		m1.toString();
+		System.out.println(m1.toString());
 		System.out.print("\n");
 		while(true) {
 			System.out.println("Media Details Options: ");
@@ -180,7 +180,7 @@ public class Aims {
 		int option4;
 		Scanner kb = new Scanner(System.in);
 		while(true) {
-			System.out.println("Current Cart Options: ");
+			System.out.println("\nCurrent Cart Options: ");
 			System.out.println("--------------------------------");
 			System.out.println("1. Filter medias in cart");		// implement method filterMediasInCart();
 			System.out.println("2. Sort medias in cart");		// implement method sortMediasInCart();
