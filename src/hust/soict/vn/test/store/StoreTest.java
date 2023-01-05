@@ -17,6 +17,8 @@ public class StoreTest {
 		s1.addMedia(dvd3);
 		
 		s1.removeMedia(dvd3);
+		
+		s1.displayStore();
 
 	}
 

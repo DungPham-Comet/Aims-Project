@@ -27,7 +27,7 @@ public class Store {
 	
 	public void displayStore() {
 		for (Media m1 : itemsInStore) {
-			System.out.println(m1.toString());
+			System.out.print(m1.toString());
 		}
 	}
 }

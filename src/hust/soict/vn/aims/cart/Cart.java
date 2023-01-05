@@ -39,9 +39,8 @@ public class Cart {
 	}
 	
 	public void printCart() {
-		for (Media m1 : itemsOrdered) {
-			m1.toString();
-		}
+		for (Media m1 : itemsOrdered)
+			System.out.print(m1.toString());
 	}
 
 }
