@@ -27,10 +27,10 @@ public class Aims {
 			System.out.println("0. Exit");				// exit AIMS project
 			System.out.println("--------------------------------");
 			System.out.print("\nPlease choose a number 0-1-2-3: ");
-			Scanner kb = new Scanner(System.in);
-			int option = kb.nextInt();
-			kb.nextLine();
-			switch(option) {
+			Scanner kb1 = new Scanner(System.in);
+			int option1 = kb1.nextInt();		
+			//kb1.nextLine();
+			switch(option1) {
 			case 1:
 				storeMenu();		
 				break;
@@ -41,15 +41,17 @@ public class Aims {
 				seeCurrentCart();
 				break;
 			}
-			if (option == 0)		
+			
+			if (option1 == 0) {
+				System.out.println("See you next time!");
 				break;
+			}
 		}
-		
-		
 	}
 	
 	public static void storeMenu() {
-		
+		store1.displayStore();
+		System.out.print("\n");
 		while(true) {
 			System.out.println("Store Menu Options: ");
 			System.out.println("--------------------------------");
@@ -60,17 +62,16 @@ public class Aims {
 			System.out.println("0. Back");						// turn back to showMenu()
 			System.out.println("--------------------------------");
 			System.out.print("\nPlease choose a number 0-1-2-3-4: ");
-			Scanner kb = new Scanner(System.in);
-			int option = kb.nextInt();
-			kb.nextLine();
-			switch(option) {
+			Scanner kb2 = new Scanner(System.in);
+			int option2 = kb2.nextInt();
+			//kb.nextLine();
+			switch(option2) {
 			case 1:		
-				Scanner kb1 = new Scanner(System.in);
+				Scanner kb3 = new Scanner(System.in);
 				System.out.print("\nPlease enter the title of the media you want to get details: ");
-				String title = kb1.nextLine();
+				String title = kb3.nextLine();
 				for (Media m1 : store1.getItemsInStore()) {
 					if (m1.getTitle().equals(title)) {
-						m1.toString();
 						mediaDetailsMenu(m1);
 					}
 				}
@@ -85,15 +86,14 @@ public class Aims {
 				seeCurrentCart();
 				break;
 			}
-			if (option == 0) {		
-				showMenu();
-			}
+			if (option2 == 0) 
+				break;
 		}
-		
 	}
 	
 	public static void mediaDetailsMenu(Media m1) {
-		
+		m1.toString();
+		System.out.print("\n");
 		while(true) {
 			System.out.println("Media Details Options: ");
 			System.out.println("--------------------------------");
@@ -103,9 +103,9 @@ public class Aims {
 			System.out.println("--------------------------------");
 			System.out.println("\nPlease choose a number: 0-1-2");
 			Scanner kb = new Scanner(System.in);
-			int option = kb.nextInt();
+			int option3 = kb.nextInt();
 			kb.nextLine();
-			switch(option) {
+			switch(option3) {
 			case 1: 
 				cart1.addMedia(m1);
 				break;
@@ -123,12 +123,9 @@ public class Aims {
 				}
 				break;
 			}
-			if (option == 0) {
-				storeMenu();
-			}
+			if (option3 == 0) 
+				break;
 		}
-
-		
 	}
 
 
@@ -178,7 +175,9 @@ public class Aims {
 	}
 	
 	public static void seeCurrentCart() {
-		int option;
+		cart1.printCart();
+		System.out.print("\n");
+		int option4;
 		Scanner kb = new Scanner(System.in);
 		while(true) {
 			System.out.println("Current Cart Options: ");
@@ -188,12 +187,12 @@ public class Aims {
 			System.out.println("3. Remove media from cart");	// implement method removeMediaFromCart();
 			System.out.println("4. Play a media");				// implement method playAMediaIFromCart();
 			System.out.println("5. Place order");				// implement method placeOrder();
-			System.out.println("0. Back");						// implement method storeMenu();
+			System.out.println("0. Back");						// implement method showMenu();
 			System.out.println("--------------------------------");
 			System.out.print("\nPlease choose a number: 0-1-2-3-4-5: ");
-			option = kb.nextInt();
-			kb.nextLine();
-			switch(option) {
+			option4 = kb.nextInt();
+			//kb.nextLine();
+			switch(option4) {
 			case 1:
 				filterMediasInCart();
 				break;
@@ -211,21 +210,17 @@ public class Aims {
 				break;
 			}
 			
-			if (option == 0) 
-				storeMenu();
+			if (option4 == 0) 
+				break;
 		}
-		
 	}
 	
 	public static void placeOrder() {
-		
 		cart1.getItemsOrdered().clear();
 		System.out.print("\nAn order is created.");
-		
 	}
 
 	public static void playAMediaFromCart() {
-		
 		Scanner kb =new Scanner(System.in);
 		System.out.print("\nPlease enter the title of the CD or DVD you want to play of your cart: ");
 		String title = kb.nextLine();
@@ -249,7 +244,6 @@ public class Aims {
 	}
 
 	public static void removeMediaFromCart() {
-		
 		System.out.print("\nPlease enter the title of type of the media you want to remove from cart: ");
 		String title;
 		Scanner kb = new Scanner(System.in);
@@ -263,7 +257,7 @@ public class Aims {
 	}
 
 	public static void sortMediasInCart() {
-		int option;
+		int option5;
 		Scanner kb = new Scanner(System.in);
 		while (true) {
 			System.out.println("Sort Options: ");
@@ -273,9 +267,9 @@ public class Aims {
 			System.out.println("0. Back");
 			System.out.println("--------------------------------");
 			System.out.print("\nPlease choose a number: 0-1-2: ");
-			option = kb.nextInt();
-			kb.nextLine();
-			switch(option) {
+			option5 = kb.nextInt();
+			//kb.nextLine();
+			switch(option5) {
 			case 1:
 				Collections.sort(cart1.getItemsOrdered(), new MediaComparatorByTitleCost());
 				break;
@@ -284,14 +278,14 @@ public class Aims {
 				break;
 			}
 			
-			if (option == 0)
-				seeCurrentCart();
+			if (option5 == 0)
+				break;
 		}
 	}
 
 	public static void filterMediasInCart() {
 		
-		int option;
+		int option6;
 		Scanner kb = new Scanner(System.in);
 		
 		while (true) {
@@ -302,9 +296,9 @@ public class Aims {
 			System.out.println("0. Back");
 			System.out.println("--------------------------------");
 			System.out.print("\nPlease choose a number 0-1-2: ");
-			option = kb.nextInt();
-			kb.nextLine();
-			switch(option) {
+			option6 = kb.nextInt();
+			//kb.nextLine();
+			switch(option6) {
 			case 1:
 				System.out.print("\nPlease enter the id: ");
 				int id = kb.nextInt();
@@ -326,13 +320,13 @@ public class Aims {
 				break;
 			}
 			
-			if (option == 0)
-				seeCurrentCart();
+			if (option6 == 0)
+				break;
 		}
 	}
 
 	public static void updateStore() {	
-		int option;
+		int option7;
 		Scanner kb = new Scanner(System.in);
 		while(true) {
 			System.out.println("Options:");
@@ -342,9 +336,9 @@ public class Aims {
 			System.out.println("0. Back");				// turn back to showMenu() 
 			System.out.println("--------------------------------");
 			System.out.print("Please choose an option to update the store: ");
-			option = kb.nextInt();
-			kb.nextLine();
-			switch (option) {
+			option7 = kb.nextInt();
+			//kb.nextLine();
+			switch (option7) {
 			case 1:
 				addToStore();
 				break;
@@ -352,10 +346,9 @@ public class Aims {
 				removeFromStore();
 				break;
 			}
-			if (option == 0)
-				showMenu();
+			if (option7 == 0)
+				break;
 		}
-		
 	}
 	
 	public static void removeFromStore() {
@@ -389,8 +382,8 @@ public class Aims {
 			int choose;
 			Scanner kb1 = new Scanner(System.in);
 			choose = kb1.nextInt();
-			if (choose == 0)	// back to updateStore() method
-				updateStore();
+			if (choose == 0)
+				break;
 			
 			System.out.print("\nPlease enter the information of type of the media you want to add to store: ");
 			Scanner kb = new Scanner(System.in);
@@ -454,13 +447,7 @@ public class Aims {
 				store1.addMedia(dvd1);
 				break;
 			}
-			
 		}
-	}
-
-	public static void exit() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public static void main(String[] args) {
