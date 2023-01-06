@@ -101,7 +101,7 @@ public class Aims {
 			System.out.println("2. Play");				// play media (CD, DVD) in mediaDetailsMenu
 			System.out.println("0. Back");				// turn back to storeMenu()
 			System.out.println("--------------------------------");
-			System.out.println("\nPlease choose a number: 0-1-2");
+			System.out.print("\nPlease choose a number 0-1-2: ");
 			Scanner kb = new Scanner(System.in);
 			int option3 = kb.nextInt();
 			kb.nextLine();
@@ -248,10 +248,9 @@ public class Aims {
 		String title;
 		Scanner kb = new Scanner(System.in);
 		title = kb.nextLine();
-		for (Media m1 : cart1.getItemsOrdered()) {
-			if (m1.getTitle().equals(title)) {
-				cart1.removeMedia(m1);
-			}
+		for (int i = 0; i < cart1.getItemsOrdered().size(); i++) {
+			if (cart1.getItemsOrdered().get(i).getTitle().equals(title))
+				cart1.removeMedia(cart1.getItemsOrdered().get(i));
 		}
 		
 	}
@@ -357,10 +356,9 @@ public class Aims {
 		String title;
 		Scanner kb = new Scanner(System.in);
 		title = kb.nextLine();
-		for (Media m1 : store1.getItemsInStore()) {
-			if (m1.getTitle().equals(title)) {
-				store1.removeMedia(m1);
-			}
+		for (int i = 0; i < store1.getItemsInStore().size(); i++) {
+			if (store1.getItemsInStore().get(i).getTitle().equals(title))
+				store1.removeMedia(store1.getItemsInStore().get(i));
 		}
 		
 	}

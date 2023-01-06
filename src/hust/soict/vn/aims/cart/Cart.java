@@ -25,7 +25,7 @@ public class Cart {
 	
 	public void removeMedia(Media md1) {
 		if (itemsOrdered.remove(md1))
-			System.out.println("The " + md1.getId() +" has been removed from your cart.");
+			System.out.println("The " + md1.getTitle() +" has been removed from your cart.");
 		else 
 			System.out.println("There's no media like " + md1.getTitle() +" in your cart.");
 	}

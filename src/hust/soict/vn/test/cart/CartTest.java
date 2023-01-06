@@ -20,10 +20,8 @@ public class CartTest {
 		System.out.println(cart.totalCost());
 		
 		cart.printCart();
-		//System.out.println(cart.getItemsOrdered().get(0).toString());
-		/*(for (int i = 0; i < cart.getItemsOrdered().size(); i++) {
-			System.out.print(cart.getItemsOrdered().get(i).toString());
-		}*/
+		
+		cart.removeMedia(dvd2);
 	}
 
 }
